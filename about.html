@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="shortcut icon" href="small (1).png" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+      body {
+        transition: 1s;
+
+        color: #fff;
+        font-family: "JetBrains Mono", monospace;
+        margin: 0;
+        background-image: linear-gradient(
+            200deg,
+            rgba(171, 171, 171, 0.05) 0%,
+            rgba(171, 171, 171, 0.05) 23%,
+            rgba(90, 90, 90, 0.05) 23%,
+            rgba(90, 90, 90, 0.05) 48%,
+            rgba(65, 65, 65, 0.05) 48%,
+            rgba(65, 65, 65, 0.05) 61%,
+            rgba(232, 232, 232, 0.05) 61%,
+            rgba(232, 232, 232, 0.05) 100%
+          ),
+          linear-gradient(
+            126deg,
+            rgba(194, 194, 194, 0.05) 0%,
+            rgba(194, 194, 194, 0.05) 11%,
+            rgba(127, 127, 127, 0.05) 11%,
+            rgba(127, 127, 127, 0.05) 33%,
+            rgba(117, 117, 117, 0.05) 33%,
+            rgba(117, 117, 117, 0.05) 99%,
+            rgba(248, 248, 248, 0.05) 99%,
+            rgba(248, 248, 248, 0.05) 100%
+          ),
+          linear-gradient(
+            144deg,
+            rgba(64, 64, 64, 0.05) 0%,
+            rgba(64, 64, 64, 0.05) 33%,
+            rgba(211, 211, 211, 0.05) 33%,
+            rgba(211, 211, 211, 0.05) 50%,
+            rgba(53, 53, 53, 0.05) 50%,
+            rgba(53, 53, 53, 0.05) 75%,
+            rgba(144, 144, 144, 0.05) 75%,
+            rgba(144, 144, 144, 0.05) 100%
+          ),
+          linear-gradient(329deg, hsl(148, 0%, 0%), hsl(148, 0%, 0%));
+      }
+      a {
+        color: #fff;
+      }
+
+      .center {
+        text-align: center;
+        transition: 1s;
+      }
+      .center:hover {
+        cursor: pointer;
+        text-shadow: 0 0 15px rgb(247, 198, 92);
+        transition: 1s;
+      }
+      .container {
+        width: 95%;
+        max-width: 1220px;
+        margin: 0 auto;
+      }
+
+      .episode {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        position: relative;
+      }
+
+      .episode__number {
+        font-size: 10vw;
+        font-weight: 600;
+        padding: 30px 0;
+        position: sticky;
+
+        top: 0;
+        text-align: center;
+        height: calc(10vw + 20px);
+        transition: all 0.5s ease-in;
+      }
+
+      .episode__content {
+        border-top: 2px solid rgb(250, 242, 136);
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-gap: 10px;
+        padding: 10px 0;
+      }
+
+      .episode__content .title {
+        font-weight: 600;
+      }
+
+      .episode__content .story {
+        line-height: 36px;
+      }
+
+      @media (max-width: 600px) {
+        .episode__content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .episode__content .story {
+          font-size: 15px;
+        }
+      }
+      .hero a {
+        font-family: "JetBrains Mono", monospace;
+        position: absolute;
+        top: 369%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      .hero a span {
+        padding: 15px;
+        transition: 0.5s;
+        position: relative;
+      }
+      .hero a span:nth-child(1) {
+        color: #fff;
+        background: #262626;
+      }
+      .hero a span:nth-child(2) {
+        color: #fff;
+        background: #0485b8;
+      }
+      .hero a span:nth-child(1):before {
+        content: attr(data-attr);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #0194ad;
+        padding: 15px;
+        transition: 0.5s;
+        transform-origin: top;
+        transform: rotateX(90deg);
+      }
+      .hero a:hover span:nth-child(1):before {
+        transform: rotateX(0deg) translateY(0%);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .hero a span:nth-child(2):before {
+        content: attr(data-attr);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #262626;
+        padding: 15px;
+        transition: 0.5s;
+        transform-origin: bottom;
+        transform: rotateX(90deg) translateY(50%);
+      }
+      .hero a:hover span:nth-child(2):before {
+        transform: rotateX(0deg) translateY(0%);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .hero a span:nth-child(1):after {
+        content: attr(data-attr);
+        padding: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #262626;
+        transform-origin: bottom;
+        transform: rotateX(0deg) translateY(0%);
+        transition: 0.5s;
+      }
+      .hero a:hover span:nth-child(1):after {
+        transform: rotateX(90deg) translateY(50%);
+      }
+      .hero a span:nth-child(2):after {
+        content: attr(data-attr);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #035175;
+        padding: 15px;
+        transition: 0.5s;
+        transform-origin: top;
+        transform: rotateX(0deg) translateY(0%);
+      }
+      .hero a:hover span:nth-child(2):after {
+        transform: rotateX(90deg) translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">About Us - Our Vision</h1>
+
+      <article class="episode">
+        <div class="episode__number">00</div>
+        <div class="episode__content">
+          <div class="title">Prologue</div>
+          <div class="story">
+            <p>
+              InTheLoop - Coding Club is a vision to achieve digital awareness
+              globally. A club that solves real world problems and impacts
+              people's lives. It is a non-profit club which focuses on spreading
+              awareness about technology. Young and ambitious members throughout
+              the world are contributing towards this noble cause. We appreciate
+              any kind of help which empowers our motto !
+            </p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="episode">
+        <div class="episode__number">01</div>
+        <div class="episode__content">
+          <div class="title">Episode 1</div>
+          <div class="story">
+            <p>
+              InTheLoop - Coding Club is a vision to achieve digital awareness
+              globally. A club that solves real world problems and impacts
+              people's lives. It is a non-profit club which focuses on spreading
+              awareness about technology. Young and ambitious members throughout
+              the world are contributing towards this noble cause. We appreciate
+              any kind of help which empowers our motto !
+            </p>
+            InTheLoop - Coding Club is a vision to achieve digital awareness
+            globally. A club that solves real world problems and impacts
+            people's lives. It is a non-profit club which focuses on spreading
+            awareness about technology. Young and ambitious members throughout
+            the world are contributing towards this noble cause. We appreciate
+            any kind of help which empowers our motto !
+
+            <p>
+              InTheLoop - Coding Club is a vision to achieve digital awareness
+              globally. A club that solves real world problems and impacts
+              people's lives. It is a non-profit club which focuses on spreading
+              awareness about technology. Young and ambitious members throughout
+              the world are contributing towards this noble cause. We appreciate
+              any kind of help which empowers our motto !
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="episode">
+        <div class="episode__number">02</div>
+        <div class="episode__content">
+          <div class="title">Episode 2</div>
+          <div class="story">
+            <p>
+              InTheLoop - Coding Club is a vision to achieve digital awareness
+              globally. A club that solves real world problems and impacts
+              people's lives. It is a non-profit club which focuses on spreading
+              awareness about technology. Young and ambitious members throughout
+              the world are contributing towards this noble cause. We appreciate
+              any kind of help which empowers our motto !
+            </p>
+            InTheLoop - Coding Club is a vision to achieve digital awareness
+            globally. A club that solves real world problems and impacts
+            people's lives. It is a non-profit club which focuses on spreading
+            awareness about technology. Young and ambitious members throughout
+            the world are contributing towards this noble cause. We appreciate
+            any kind of help which empowers our motto !
+          </div>
+        </div>
+      </article>
+
+      <article class="episode">
+        <div class="episode__number">03</div>
+        <div class="episode__content">
+          <div class="title">Episode 3</div>
+          <div class="story">
+            <p>
+              InTheLoop - Coding Club is a vision to achieve digital awareness
+              globally. A club that solves real world problems and impacts
+              people's lives. It is a non-profit club which focuses on spreading
+              awareness about technology. Young and ambitious members throughout
+              the world are contributing towards this noble cause. We appreciate
+              any kind of help which empowers our motto !
+            </p>
+            InTheLoop - Coding Club is a vision to achieve digital awareness
+            globally. A club that solves real world problems and impacts
+            people's lives. It is a non-profit club which focuses on spreading
+            awareness about technology. Young and ambitious members throughout
+            the world are contributing towards this noble cause. We appreciate
+            any kind of help which empowers our motto ! InTheLoop - Coding Club
+            is a vision to achieve digital awareness globally. A club that
+            solves real world problems and impacts people's lives. It is a
+            non-profit club which focuses on spreading awareness about
+            technology. Young and ambitious members throughout the world are
+            contributing towards this noble cause. We appreciate any kind of
+            help which empowers our motto ! InTheLoop - Coding Club is a vision
+            to achieve digital awareness globally. A club that solves real world
+            problems and impacts people's lives. It is a non-profit club which
+            focuses on spreading awareness about technology. Young and ambitious
+            members throughout the world are contributing towards this noble
+            cause. We appreciate any kind of help which empowers our motto !
+            InTheLoop - Coding Club is a vision to achieve digital awareness
+            globally. A club that solves real world problems and impacts
+            people's lives. It is a non-profit club which focuses on spreading
+            awareness about technology. Young and ambitious members throughout
+            the world are contributing towards this noble cause. We appreciate
+            any kind of help which empowers our motto !
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="hero">
+      <a href="https://forms.gle/NpL5dXZaRhcz4rMa6"
+        ><span data-attr="Join">Join</span><span data-attr="Us">Us</span></a
+      >
+    </div>
+  </body>
+</html>
