@@ -70,6 +70,39 @@
         margin: 0 auto;
       }
 
+
+      .navbar {
+        clear: both;
+        overflow: auto;
+      }
+
+      nav {
+        overflow: hidden;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        color: white;
+        background-color: rgba(4, 7, 10, 0.27);
+        font-family: "JetBrains Mono", monospace !important;
+
+      }
+
+      ul li {
+        display: inline-block;
+        padding: 10px;
+        font-size: 20px;
+      }
+
+      ul li a:hover {
+        text-shadow: 0 0 15px rgb(255, 255, 255);
+        color: #03a9f4;
+      }
+      ul li a{
+        text-decoration: none;
+        color:white;
+      }
       .episode {
         display: grid;
         grid-template-columns: 1fr 4fr;
@@ -199,6 +232,17 @@
     </style>
   </head>
   <body>
+  
+    <div class="navbar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="">Join</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  
     <div class="container">
       <h1 class="center">About Us - Our Vision</h1>
 
