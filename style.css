@@ -48,6 +48,8 @@ nav {
   height: 50px;
   color: white;
   background-color: rgba(4, 7, 10, 0.27);
+  font-family: "JetBrains Mono", monospace;
+
 }
 
 ul li {
