@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
     <link rel="shortcut icon" href="big.png" type="image/x-icon" />
+   
+
   </head>
   <style>
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Supermercado+One&display=swap');
     body::-webkit-scrollbar {
       background-image: repeating-linear-gradient(
           45deg,
@@ -46,6 +51,7 @@ body::-webkit-scrollbar-thumb {
       box-sizing: border-box;
     }
     .card_container {
+      
       display: grid;
       grid-template-columns: auto auto auto;
       align-items: center;
@@ -54,6 +60,7 @@ body::-webkit-scrollbar-thumb {
       
     }
     .card {
+      font-family: 'Supermercado One', cursive;
       padding: 20px;
       font-size: 30px;
       text-align: center;
@@ -72,27 +79,36 @@ body::-webkit-scrollbar-thumb {
       backdrop-filter: blur(5px);
     }
     .card .content {
+      font-family: "JetBrains Mono", monospace !important;
+
+      font-size: 1.5vw;
       cursor: default;
       padding: 0px;
       text-align: center;
       transition: 1.5s;
-      transform: translateY(100px);
+    }
+    .card .content h2{
+      font-family: 'Supermercado One', cursive;
+      transform: translateY(600px);
+
       opacity: 0;
     }
     .card img{
       width: 300px;
       height: 200px;
     }
-    .card:hover .content {
+    .card:hover h2{
       transform: translateY(0px);
       opacity: 1;
+      transition: .5s;
+
     }
 
     .card .content h2 {
       position: absolute;
-      top: 20px;
-      font-size: 3em;
-      color: rgba(182, 220, 255, 0.41);
+      top: 130px;
+      font-size: 2.4em;
+      color: rgba(182, 220, 255, 1);
       pointer-events: none;
     }
     .card .content p {
@@ -104,17 +120,52 @@ body::-webkit-scrollbar-thumb {
       display: block;
       text-align: center;
     }
+    nav {
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: white;
+  background-color: rgba(4, 7, 10, 0.27);
+  font-family: "JetBrains Mono", monospace !important;
+
+}
+
+ul li {
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+ul li a:hover {
+  text-shadow: 0 0 15px rgb(255, 255, 255);
+  color: #03a9f4;
+}
+ul li a{
+  text-decoration: none;
+  color:white;
+}
   </style>
   <body>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Join</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
     <h1 id="ourteam">Our Team</h1>
     <div class="card_container">
       <div class="card">
         <div class="content">
-          <h2>Dev Shah</h2>
+          <h2>Dev</h2>
           <img src="dev.jpeg" alt="" srcset="" />
           <p>
             Founder of InTheLoop 
-            jUST another ordinary coder
+            Just another ordinary coder
           </p>
         </div>
       </div>
@@ -134,7 +185,7 @@ body::-webkit-scrollbar-thumb {
           <img src="sumanyu.png" alt="" srcset="" />
           <p>
             Senior Developer at InTheLoop 
-            I am the cool boy. CHAD
+            Cool Boy
           </p>
         </div>
       </div>
